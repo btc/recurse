@@ -6,6 +6,9 @@ struct Index<'a> {
 }
 
 impl<'a> Index<'a> {
+    
+    // TODO communicate to the compiler that strings and refs will be owned by an object that outlives them both.
+    
     pub fn generate() -> Self {
         let strings = load_huge_strings();
         let refs = compute_refs(&strings);
